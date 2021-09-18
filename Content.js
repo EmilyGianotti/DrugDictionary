@@ -2,7 +2,7 @@ window.addEventListener('mouseup', drugSelected);
 
 function drugSelected() {
     console.log('drug selected');
-    let selectedText = window.getSelection().toString();
+    let selectedText = window.getSelection().toString().trim;
     console.log(selectedText);
     if (selectedText.length > 0) {
         let message = {
