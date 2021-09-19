@@ -19,8 +19,12 @@ function setup() {
         while (counter < 5 && indx < data.results.length){
             value = data.results[indx].term;
             if (value != "PRODUCT USED FOR UNKNOWN INDICATION" &&
-            value != "DRUG USED FOR UNKNOWN INDICATION"){
-                drug_uses += (value + "\n");
+            value != "DRUG USE FOR UNKNOWN INDICATION"){
+                if (counter < 4)
+                    drug_uses += (value + ", ");
+                else
+                    drug_uses += value
+                drug_uses += "\n";
                 counter++;
             }
             indx++;
@@ -28,10 +32,8 @@ function setup() {
 
         createP(drug_uses);
     }
-    //def = "The drug def"
-    createP("Drug: " + drug_input).style("font-size", "20pt")
+    createP("Drug: " + drug_input).style("font-size", "15pt")
     def = "The drug is used for:";
     createP(def);
-    //createP(drug_input);
     
 }
